@@ -4,7 +4,7 @@
 //
 //   cargo run --example stream_wav -- <libonnxruntime> <silero_vad.onnx> <file.wav> [chunk_ms] [gate_threshold_db]
 
-use silero_vad_rs::{FindSpeechSegmentsParams, NoiseGateParams, VadIterator, initialize};
+use rsvad::{FindSpeechSegmentsParams, NoiseGateParams, VadIterator, initialize};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

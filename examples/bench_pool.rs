@@ -8,7 +8,7 @@
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 
-use silero_vad_rs::{VadEnvConfig, VadIterator, initialize, pool_stats};
+use rsvad::{VadEnvConfig, VadIterator, initialize, pool_stats};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

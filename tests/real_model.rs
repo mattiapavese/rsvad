@@ -17,7 +17,7 @@
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering};
 
-use silero_vad_rs::{
+use rsvad::{
     FindSpeechSegmentsParams, NoiseGateParams, SpeechSegment, VadEnvConfig, VadIterationResult, VadIterator,
     initialize, pool_stats,
 };
