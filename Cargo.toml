@@ -1,0 +1,18 @@
+[package]
+name = "silero_vad_rs"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Streaming Silero VAD iterator with lookback and noise gate"
+publish = false
+
+[dependencies]
+# load-dynamic: the ONNX Runtime shared library is loaded at runtime from the path
+# passed to initialize(). api-17: any ONNX Runtime >= 1.17 works
+ort = { version = "=2.0.0-rc.13", default-features = false, features = ["load-dynamic", "api-17"] }
+# only the channels: works with any async runtime, not only tokio's
+tokio = { version = "1.53", default-features = false, features = ["sync"] }
+
+[dev-dependencies]
+hound = "3.5"
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "time"] }
